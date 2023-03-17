@@ -181,10 +181,10 @@ contract MintContract is ERC721Z {
     // dev mint for team and marketing etc
     function devMint(uint256 amount_) external onlyOwner {
         require(totalSupply < MaxSupply, "Max supply has been reached!");
-        require(amountForDevMint % amount_ = 0, "Invalid mint amount!");
-        require(amount_ < amountForDevMint + 1, "Invalid number of mints requested");
+        require(_amountForDevMint % amount_ = 0, "Invalid mint amount!");
+        require(amount_ < _amountForDevMint + 1, "Invalid number of mints requested");
 
-        uint256[] tokenIds = new uint256[](amount_);
+        uint256[] memory tokenIds = new uint256[](amount_);
         for(uint256 i = 0; i < amount_; i++) {
             tokenIds[i] = i;
         }

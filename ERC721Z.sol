@@ -149,7 +149,7 @@ contract ERC721Z {
 
     function multiTransferToMany(address from_, address[] memory to_, uint256[] memory tokenIds_) public virtual {
         for (uint256 i = 0; i < tokenIds_.length; i++) {
-            transferFrom(from_, to_[i], tokenids_[i]);
+            transferFrom(from_, to_[i], tokenIds_[i]);
         }
     }
 
@@ -159,7 +159,7 @@ contract ERC721Z {
         uint256[] memory tokenIds_,
         bytes memory data_) public virtual {
             for (uint256 i = 0; i < tokenIds_.length; i++) {
-                transferFrom(from_, to_[i], tokenids_[i], data_);
+                safeTransferFrom(from_, to_[i], tokenIds_[i], data_);
             }
     }
 
